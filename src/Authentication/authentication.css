@@ -1,25 +1,7 @@
-.mainbox-login {
-    background-image: url("../assets/backgr.png");
-    background-size: cover;
-    height: 100vh;
-}
+.container.login {
+	margin: 144px 800px 260px 143px;
+	padding: 10px 80px 10px 80px;
+  }
+  
 
-.container1 {
-	padding: 5% 3% 10% 3%;
-	width: 80%;
-}
 
-.login_text{
-	margin: 0;
-}
-
-.log_but {
-	width: 48%;
-	height: 50px;
-	background: linear-gradient(to right, #3F51B5 0%, #6173DB 100%);
-	box-shadow: 0 0 8px rgba(141, 140, 140, 0.5); 
-}
-
-.button {
-	text-align: center;
-}

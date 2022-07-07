@@ -12,10 +12,10 @@
 .but-clicked {
     padding: 0.5rem 1rem;
     color: #fff;
-    background: #FF4820;
+	background: linear-gradient(to right, #3F51B5 0%, #6173DB 100%);
+	box-shadow: 0 0 8px rgba(141, 140, 140, 0.5); 
     font-weight: 500;
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 15px;  
     border: none;
     outline: none;
     cursor: pointer;
@@ -24,7 +24,7 @@
 
 .but-unclicked {
     background: transparent;
-    font-size: 18px;
+    font-size: 15px;
     margin-right: 20px;
     margin-left: 20px;
     color: rgb(202, 202, 202);

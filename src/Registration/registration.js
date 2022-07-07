@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { TextField,Typography, Stack, Button,
-	IconButton, InputAdornment, useTheme, FormHelperText } from "@mui/material";
+import { TextField,Typography, Stack, Button,IconButton, InputAdornment, useTheme, FormHelperText } from "@mui/material";
 import "./registration.css";
 import Header from '../components/Header/header';
 
@@ -21,39 +20,48 @@ function RegistrationPage() {
 
 	const theme = createTheme({
 		palette: {
-		  primary: {
-			// light: will be calculated from palette.primary.main,
-			main: '#ffffff',
-			// dark: will be calculated from palette.primary.main,
-			// contrastText: will be calculated to contrast with palette.primary.main
-			dark: '#ACA6BB',
-			contrastText: '#fff',
-		  },
-	},
-});
+			primary: {
+				// light: will be calculated from palette.primary.main,
+				main: '#ffffff',
+				// dark: will be calculated from palette.primary.main,
+				// contrastText: will be calculated to contrast with palette.primary.main
+				dark: '#ACA6BB',
+				contrastText: '#fff',
+			},
+			TextField: {
+				marginTop: 5
+			},
+			input: {
+				color: 'white'
+			}
+		}
+	});
+
 	return (
-		<div className='mainbox-signup'>
+		<div className='mainbox'>
             <Header/>
-			<div className='box'>
-			<Stack direction="column" className="container1" alignItems="center" spacing={2} >
-			<Typography fontSize={24} fontWeight={400} color={theme.palette.primary.main}>Регистрация</Typography>
+			<Stack direction="column" className="container signup" alignItems="center" >
+			<p className="login-text">Регистрация</p>
 				<TextField
+					sx ={{marginTop: '5px'}}
 					type='text'
-					label="Логин"
+					label="Логин/Почта"
 					variant='standard'
 					className="StandardInput"
 					fullWidth				
 					//onChange={handleLoginOnChange}
 				/>
 				<TextField
+					sx ={{marginTop: '5px'}}
 					type='email'
-					label="Почта"
+					label="ФИО"
 					className="StandardInput"
 					variant='standard'
 					fullWidth
 					//onChange={handleEmailOnChange}
 				/>
 				<TextField
+					sx ={{marginTop: '5px'}}
 					label="Пароль"
 					type={showPassword ? 'text' : 'password'}
 					className="StandardInput"
@@ -66,6 +74,7 @@ function RegistrationPage() {
 					}}*/
 				/>
 				<TextField
+					sx ={{marginTop: '5px'}}
 					label="Повторите пароль"
 					type={showPassword ? 'text' : 'password'}
 					className="StandardInput"
@@ -75,25 +84,11 @@ function RegistrationPage() {
 					error={error}
 					//onChange={handlePasswordConfirmOnChange}
 				/>
+				<div className='auth-button signup'/*onClick={handleRegistrationResponse} */>
+   					Зарегистрироваться
+				</div>
 			</Stack>
-			</div>
-			<div className='button'>
-			<Button 
-				className='button_Registration'
-				variant='text' 
-				sx={{ 
-					color: 'white', 
-					borderRadius: 2,
-					marginTop: -12,
-						
-				}}
-				//</div>onClick={handleRegistrationResponse}
-                >
-				<Typography 
-				variant='text'
-				fontSize={15}>Зарегистрироваться</Typography>		
-			</Button>
-			</div>
+			
 	</div>
 	);
 }

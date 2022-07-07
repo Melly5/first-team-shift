@@ -20,22 +20,23 @@ function AuthenticationPage() {
 
 
 	return (
-		<div className='mainbox-login'>
+		<div className='mainbox'>
             <Header/>
-			<div className="box">
-			<Stack direction="column" className="container1"  spacing={2} alignItems = "center">
-				<Typography fontSize={24} fontWeight={600}>	Sign In</Typography>
-				<TextField					
-					id="standard-basic"
-					label="Login"
+			<Stack direction="column" className="container login" alignItems = "center">
+				<p className="login-text">Вход</p>
+				<TextField	
+					sx ={{marginTop: '7px'}}
+					className ="login-input"
+					label="Логин"
 					variant="standard"
 					borderRadius = "30"
 					fullWidth 			
 					//onChange={(event) => handleLoginOnChange(event)}
 				/>				
 				<TextField
-					id="standard-basic-1"
-					label="Password"
+					sx ={{marginTop: '7px'}}
+					className="login-input"
+					label="Пароль"
 					variant="standard"
 					fullWidth 
 					type={showPassword ? 'text' : 'password'}
@@ -46,22 +47,10 @@ function AuthenticationPage() {
 						endAdornment: showPasswordIcon()
 					}}*/
 				/>
+				<div className="auth-button login" /*onClick={() => handleSignInResponse()}*/>					
+					Войти					
+				</div>	
 			</Stack>
-			</div>
-			<div className='button'>
-				<Button
-					sx={{ 
-						color: 'white',					 
-						borderRadius: 5,
-						marginTop: 5					
-					}}
-					className="log_but"
-					variant="text"
-					//</div>onClick={() => handleSignInResponse()}
-                    >					
-					<Typography fontSize={15}>Sign In</Typography>					
-				</Button>
-			</div>			
 		</div>
 	);
 }
