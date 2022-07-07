@@ -5,6 +5,7 @@ import "./registration.css"
 import { useNavigate } from "react-router-dom";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { createTheme } from '@mui/material/styles';
 
 function RegistrationPage() {
 	const [login, setLogin] = useState('')
@@ -16,14 +17,26 @@ function RegistrationPage() {
 	const [errorText, setErrorText] = useState('')
 	const [error, setError] = useState(false);
 
+	const theme = createTheme({
+		palette: {
+		  primary: {
+			// light: will be calculated from palette.primary.main,
+			main: '#ffffff',
+			// dark: will be calculated from palette.primary.main,
+			// contrastText: will be calculated to contrast with palette.primary.main
+			dark: '#ACA6BB',
+			contrastText: '#fff',
+		  },
+	},
+});
 	return (
 		<div className='mainbox-signup'>
 			<div className='box'>
-			<Stack direction="column" className="container1"  spacing={2} alignItems="center">
-			<Typography fontSize={24} fontWeight={600} >	Sign Up</Typography>
+			<Stack direction="column" className="container1" alignItems="center" spacing={2} >
+			<Typography fontSize={24} fontWeight={400} color={theme.palette.primary.main}>Регистрация</Typography>
 				<TextField
 					type='text'
-					label="Login"
+					label="Логин"
 					variant='standard'
 					className="StandardInput"
 					fullWidth				
@@ -31,14 +44,14 @@ function RegistrationPage() {
 				/>
 				<TextField
 					type='email'
-					label="Email"
+					label="Почта"
 					className="StandardInput"
 					variant='standard'
 					fullWidth
 					//onChange={handleEmailOnChange}
 				/>
 				<TextField
-					label="Password"
+					label="Пароль"
 					type={showPassword ? 'text' : 'password'}
 					className="StandardInput"
 					variant='standard'
@@ -50,7 +63,7 @@ function RegistrationPage() {
 					}}*/
 				/>
 				<TextField
-					label="Confirm Password"
+					label="Повторите пароль"
 					type={showPassword ? 'text' : 'password'}
 					className="StandardInput"
 					variant='standard'
@@ -67,13 +80,15 @@ function RegistrationPage() {
 				variant='text' 
 				sx={{ 
 					color: 'white', 
-					borderRadius: 5,
-					marginTop: 5,
+					borderRadius: 2,
+					marginTop: -12,
 						
 				}}
 				//</div>onClick={handleRegistrationResponse}
                 >
-				<Typography fontSize={15} >Sign Up</Typography>		
+				<Typography 
+				variant='text'
+				fontSize={15}>Зарегистрироваться</Typography>		
 			</Button>
 			</div>
 	</div>
