@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField,Typography, Stack, Button,
 	IconButton, InputAdornment } from "@mui/material";
-
+import Header from '../components/Header/header';
 import "./authentication.css"
 import { useNavigate } from "react-router-dom";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
@@ -21,6 +21,7 @@ function AuthenticationPage() {
 
 	return (
 		<div className='mainbox-login'>
+            <Header/>
 			<div className="box">
 			<Stack direction="column" className="container1"  spacing={2} alignItems = "center">
 				<Typography fontSize={24} fontWeight={600}>	Sign In</Typography>

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { TextField,Typography, Stack, Button,
 	IconButton, InputAdornment, useTheme, FormHelperText } from "@mui/material";
-import "./registration.css"
+import "./registration.css";
+import Header from '../components/Header/header';
+
 import { useNavigate } from "react-router-dom";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Link } from "react-router-dom";
@@ -31,6 +33,7 @@ function RegistrationPage() {
 });
 	return (
 		<div className='mainbox-signup'>
+            <Header/>
 			<div className='box'>
 			<Stack direction="column" className="container1" alignItems="center" spacing={2} >
 			<Typography fontSize={24} fontWeight={400} color={theme.palette.primary.main}>Регистрация</Typography>

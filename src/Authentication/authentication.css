@@ -1,11 +1,10 @@
 .mainbox-login {
-    background-image: url("../Registration/backgr.png");
+    background-image: url("../assets/backgr.png");
     background-size: cover;
     height: 100vh;
 }
 
 .container1 {
-	
 	padding: 5% 3% 10% 3%;
 	width: 80%;
 }

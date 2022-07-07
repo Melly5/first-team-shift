@@ -1,5 +1,5 @@
 .mainbox-signup {
-    background-image: url("./backgr.png");
+    background-image: url("../assets/backgr.png");
     background-size: cover;
     height: 100vh;
 }
@@ -22,6 +22,7 @@
 	margin-left: 120px;
 	
 }
+
 
 .signUp {
 	margin: 0;

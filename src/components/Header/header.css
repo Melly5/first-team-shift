@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 6rem;
+}
+
+.header-logo {
+    margin-right: 2rem;
+}
+
+.but-clicked {
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background: #FF4820;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.but-unclicked {
+    background: transparent;
+    font-size: 18px;
+    margin-right: 20px;
+    margin-left: 20px;
+    color: rgb(202, 202, 202);
+}
