@@ -8,7 +8,7 @@ export const RootPage = () => {
     "characters",
     () =>
       api.get(
-        "http://shift-summer-2022-backend.herokuapp.com/api/rickAndMorty/characters",
+        
         {
           headers: {
             AuthToken: "test",
