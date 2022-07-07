@@ -5,10 +5,9 @@ import { Button } from '@mui/material';
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
-    const [style, setStyle] = useState('');
+    //const [style, setStyle] = useState('');
     const pathname = useLocation().pathname;
-	const assignStyle = (path) => pathname === path ? "but-clicked" : "but-unclicked";
-
+	const assignStyle = (path) => pathname === path ? "but-unclicked" : "but-clicked";
 
     return (
         <div className="header">
@@ -16,15 +15,10 @@ const Header = () => {
                 <img src={logo} alt="logo"></img>
             </div>
             <div className='header-sign'>
-                <Button className={assignStyle("/login")}>
-                    <Link to="/login">Sign In</Link>
-                </Button>
-                <Button className={assignStyle("/signup")}>
-                    <Link to="/signup">Sign Up</Link>
-                </Button>
+                    <Link className={assignStyle("/login")} to="/login" style={{ textDecoration: 'none' }}>Sign In</Link>
+                    <Link className={assignStyle("/signup")} to="/signup" style={{ textDecoration: 'none' }}>Sign Up</Link>
             </div>
         </div>
-        
     )
 }
 
