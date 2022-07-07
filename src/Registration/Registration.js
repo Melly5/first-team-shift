@@ -112,7 +112,7 @@ function RegistrationPage() {
 		<div>
 			<div className='box'>
 			<Stack direction="column" className="container1"  spacing={2} alignItems="center">
-			<Typography fontSize={24} fontWeight={600} color={theme.palette.primary.main}>	Sign Up</Typography>
+			<Typography fontSize={24} fontWeight={600} color={theme.palette.primary.main}>Регистрация</Typography>
 				<TextField
 					type='text'
 					label="Login"
@@ -168,7 +168,7 @@ function RegistrationPage() {
 			</div>
 			<div className='links'>
 				<Link to="/login" style={{ textDecoration: 'none' }}>
-					<Typography sx={{fontStyle: 'italic'}} color={theme.palette.primary.main}>Already have an account? Click here to Sign In</Typography>
+					<Typography sx={{fontStyle: 'italic'}} color={theme.palette.primary.main}>Уже есть аккаунт? Нажмите сюда для входа</Typography>
 				</Link>
 			</div>
 	</div>

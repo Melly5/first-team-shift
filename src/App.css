@@ -30,7 +30,7 @@
 body {
   height: 100vh;
   width: 100vw;
-	background-image: url("./Global/back.png");
+	/* background-image: url("./Global/back.png"); */
 	background-position: bottom;
 	background-attachment: fixed;
 	background-repeat: no-repeat;

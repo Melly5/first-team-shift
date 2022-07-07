@@ -1,20 +1,21 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { ProvideAuth } from "./Authentication/useAuth.js"
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import { QueryClient, QueryClientProvider } from "react-query";
 
-import { RootPage } from "./pages/root";
-import { ROUTES } from "./utils/constants/router";
+/* import { RootPage } from "./pages/root";
+import { ROUTES } from "./utils/constants/router"; */
 import Header from './Global/Header/Header';
 import AuthenticationPage from './Authentication/Authentication';
 import RegistrationPage from "./Registration/Registration";
 
-const queryClient = new QueryClient({
+/* const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
     },
   },
-});
+}); */
 
 export function getRoute(path) {
 	return routes.find(x => x.path === path);
@@ -68,14 +69,44 @@ function LinkBody(props)
 }
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
+    <ProvideAuth>
+			<Router>
+				<div className='main-div'>
+					{/* Header */}
+					<Routes>
+						{routes.map((route,index) => (
+							<Route
+								key = {index}
+								path = {route.path}
+								element = {route.header}
+							/>
+						))}
+					</Routes>
+					{/* Body */}
+					<div className='body-element'>
+						<Routes>
+							{routes.map((route,index) => (
+									<Route
+										key = {index}
+										path = {route.path}
+										element = {route.main}
+									/>
+							))}
+						</Routes>
+					</div>
+				</div>
+			</Router>
+		</ProvideAuth>
+  );
+}
+    /* <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
           <Route path={ROUTES.ROOT} element={<RootPage />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
-  );
-}
+  ); */
+
 
 export default App;
