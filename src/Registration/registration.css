@@ -7,7 +7,7 @@
 .container2 {
 	margin: 5% auto auto 0;
 	padding: 5% 3% 10% 3%;
-	width: 100px;
+	width: 101px;
 	}
 
 .box {
@@ -20,7 +20,6 @@
 	box-shadow: 0 0 6px rgba(195, 194, 194, 0.5); 
 	background-color: #0c3766;
 	margin-left: 120px;
-	top: 50%;
 	
 }
 
