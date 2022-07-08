@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField,Typography, Stack/*, Button,IconButton, InputAdornment, useTheme, FormHelperText*/ } from "@mui/material";
+import { TextField, Typography, Stack/*, Button,IconButton, InputAdornment, useTheme, FormHelperText*/ } from "@mui/material";
 import "./registration.css";
 import Header from '../../components/Header/header';
 import { Link } from "react-router-dom";
@@ -35,7 +35,7 @@ function RegistrationPage() {
 	});
 
 	return (
-		<div className='mainbox'>
+		<div className='mainbox unsigned'>
             <Header/>
 			<Stack direction="column" className="container signup" alignItems="center" >
 			<p className="login-text">Регистрация</p>

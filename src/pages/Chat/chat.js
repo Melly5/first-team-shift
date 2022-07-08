@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { TextField,Typography, Stack, Button, IconButton, InputAdornment } from "@mui/material";
+import { Paper, InputBase, TextField,Typography, Stack, Button, IconButton, InputAdornment } from "@mui/material";
 import Header from '../../components/Header/header';
 import "./chat.css";
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
+import AttachFileOutlinedIcon from '@mui/icons-material/AttachFileOutlined';
+import SendRoundedIcon from '@mui/icons-material/SendRounded';
 
 function ChatPage() {
 
@@ -59,8 +61,22 @@ function ChatPage() {
                     </div>
                 </div>
                 <div className='dialogbox'>
-                    <div className='message-box'></div>
-                    <div className='send-box'></div>
+                    <div className='message-box'>
+                        <div className='message received first'>Мне нужны отчёты за три последних месяца, насколько я помню, ты говорила, что сделаешь их сегодня</div>
+                        <div className='message sent second'>Закончила несколько минут назад</div>
+                        <div className='message received third'>Пришлешь сейчас?</div>
+                        <div className='message sent forth'>Да, конечно, минуту</div>              
+                    </div>
+                    <div className='send-box'>
+                        <AttachFileOutlinedIcon sx={{ color: "#C5C5C5" }}/>
+                        <div className='input-message'>
+                            <InputBase
+                                sx={{ ml: 2, mt: 0.5, input: { color: '#C5C5C5' }  }}
+                                placeholder="Введите сообщение..."                               
+                            />
+                        </div>
+                        <SendRoundedIcon sx={{ color: "#C5C5C5" }}/>
+                    </div>
                 </div>
             </div>
         </div>  

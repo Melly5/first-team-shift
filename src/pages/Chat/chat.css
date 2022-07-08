@@ -1,30 +1,43 @@
 .chatbox {
     display: flex;
     flex-direction: row;
-    height: calc(100% - 47px - 68px);
+    height: calc(100% - 47px - 69px);
+    width: 100%;
 }
 
 .profilebox {
     width: 25%;
-    padding: 46px 33px 0 33px;
+    
     border-left: 2px solid var(--border);
     border-right: 2px solid var(--border);
+    border-top: 2px solid var(--border);
+}
+.profilebox-container {
+    padding: 46px 33px 0 33px;
 }
 
 .dialogbox {
     display: flex;
     flex-direction: column;
     width: 75%;
+    border-top: 2px solid var(--border);
     border-right: 2px solid var(--border);
 }
 
 .message-box {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
     border-bottom: 2px solid var(--border);
-    height: 80%;
+    height: 85%;
 }
 
 .send-box {
-    height: 20%;
+    height: 15%;
+    justify-content: center;
+    padding: 0 35px;
+    align-items: center;
 }
 
 .profile {
@@ -56,7 +69,7 @@
     color: var(--text);
 }
 
-.status, .options-item,.messages-logo, .messages-item {
+.status, .options-item,.messages-logo, .messages-item, .send-box {
     display: flex;
     flex-direction: row;
 }
@@ -81,13 +94,14 @@
 .options, .messages {
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 37px;
 }
 
 .option {
     margin-left: 15px;
     color: var(--text);
 }
+
 .messages-item {
     margin-bottom: 15px;
 }
@@ -103,7 +117,54 @@
 
 .profile-nickname.list {
     margin-left: 15px;
+    color: var(--text);  
+}
+
+.input-message{
+    height: 39px;
+    width: 520px;
+    border: 3px solid #13263E;
+    border-radius: 5px;
+    background-color: transparent;
+    align-items: center;
+    margin: auto 40px;
+}
+
+.message {
+    position: absolute;
+    padding: 9px 20px;
+    max-width: 220px;
+    margin-bottom: 17px;
     color: var(--text);
-    
+}
+
+.message.sent{
+    right: 32px;
+    height: auto;
+    background-color: var(--sendmes);
+    /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 5px 5px 0 5px;
+}
+
+.message.received {
+    left: 32px;
+    height:auto;
+    border-radius: 5px 5px 5px 0;
+    background-color: var(--receivemes);
+}
+.message.received.first {
+    margin-bottom: 260px;
+}
+
+.message.sent.second {
+    margin-bottom: 170px;
+}
+
+.message.received.third {
+    margin-bottom: 106px;
+}
+
+.message.sent.forth {
+    margin-bottom: 38px;
 }
 
