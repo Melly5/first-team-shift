@@ -32,7 +32,8 @@ code {
 }
 
 .mainbox.unsigned {
-  background-image: url("../backgr.png");
+  padding: 0 239px;
+  background-image: url("../backg-unsigned.png");
 }
 
 .mainbox.signed {
@@ -43,9 +44,9 @@ code {
 
 
 .login-text{
-	font-size: 35px;
+	font-size: 28px;
 	font-weight: 500;
-	margin-top: 28px;
+	margin-top: 25px;
 	margin-bottom: 0;
 	color: white;
 }
@@ -55,15 +56,14 @@ code {
 	align-items: center;
 	border-radius: 25px;
 	box-shadow: 0 0 6px rgba(43, 37, 87, 0.889); 
-	background-color: #0c3766;	
+	background-color: var(--lightblue)	;
 }
 
 .auth-button {
-	margin-top: 43px;
-  margin-bottom: 22px;
-	background: linear-gradient(to right, #3F51B5 0%, #6173DB 100%);
-	box-shadow: 0 0 8px rgba(141, 140, 140, 0.5); 
-	padding: 0.8rem 1rem;
+	margin-top: 30px;
+  margin-bottom: 5px;
+	background: linear-gradient(to right, #3F51B5 0%,#6173DB 100%);
+	padding: 0.8rem 0.2rem;
   color: #fff;
   font-weight: 500;
   font-size: 17px;
