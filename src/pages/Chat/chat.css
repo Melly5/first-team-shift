@@ -102,6 +102,10 @@
     color: var(--text);
 }
 
+.options-item {
+    margin-top: 5px;
+}
+
 .messages-item {
     margin-bottom: 15px;
 }

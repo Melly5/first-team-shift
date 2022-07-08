@@ -17,7 +17,7 @@ const Header = (props) => {
         return (
             <div className="header">
                 <div className="header-logo">
-                    <img src={logo} alt="logo"></img>
+                    <img src={logo} alt="logo" ></img>
                 </div>
                 <div className='header-sign'>
                         <Link className={assignStyle("/login")} to="/login" style={{ textDecoration: 'none' }}>Sign In</Link>
@@ -32,12 +32,12 @@ const Header = (props) => {
             <div className="header signed">
                 <div className="signed-container">
                     <div className="header-logo signed">
-                        <img src={logo} alt="logo"></img>
+                        <Link to="/login" style={{ textDecoration: 'none' }}><img src={logo} alt="logo"/></Link>
                     </div>
                     <div className='header-info'>
                         <Paper
                             component="form"
-                            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 218, height: 35, mr: 2 }}
+                            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 218, height: 30, mr: 2 }}
                             elevation={1}
                             style={{
                               padding: 8,

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TextField,Typography, Stack /*, Button, IconButton, InputAdornment */} from "@mui/material";
 import Header from '../../components/Header/header';
 import "./authentication.css"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function AuthenticationPage() {
 
@@ -44,7 +44,7 @@ function AuthenticationPage() {
 					}}*/
 				/>
 				<div className="auth-button login" /*onClick={() => handleSignInResponse()}*/>					
-					Войти					
+					<Link to="/chat" style={{ textDecoration: 'none', color: 'white'}}>Войти</Link>			
 				</div>	
 			</Stack>
 		</div>
