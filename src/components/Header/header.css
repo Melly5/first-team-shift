@@ -21,6 +21,15 @@
     margin-right: 2rem;
 }
 
+.header-logo.signed {
+    padding-top: 3px;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: row;
+}
+
 .but-clicked {
     padding: 0.5rem 1rem;
     color: #fff;
