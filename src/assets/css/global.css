@@ -3,6 +3,12 @@
   padding: 0;
 }
 
+:root {
+  --border: #042d5d;
+  --lightblue: #243D5E;
+  --text: #C5C5C5;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
