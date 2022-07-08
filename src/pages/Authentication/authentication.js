@@ -16,7 +16,7 @@ function AuthenticationPage() {
 
 
 	return (
-		<div className='mainbox'>
+		<div className='mainbox unsigned'>
             <Header/>
 			<Stack direction="column" className="container login" alignItems = "center">
 				<p className="login-text">Вход</p>

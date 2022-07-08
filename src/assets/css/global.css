@@ -7,6 +7,8 @@
   --border: #042d5d;
   --lightblue: #243D5E;
   --text: #C5C5C5;
+  --sendmes: #5A20FF;
+  --receivemes: #13263E;
 }
 
 body {
@@ -24,9 +26,13 @@ code {
 }
 
 .mainbox {
-  background-image: url("../backgr.png");
+  background-image: url("../backg-signed.png");
   background-size: cover;
   height: 100vh;
+}
+
+.mainbox.unsigned {
+  background-image: url("../backgr.png");
 }
 
 .mainbox.signed {

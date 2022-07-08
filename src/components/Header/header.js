@@ -42,16 +42,12 @@ const Header = (props) => {
                             style={{
                               padding: 8,
                               backgroundColor: "#1B1A2C",
-                              border: "none",
-                            
+                              border: "none"
                             }}
                         >  
                             <InputBase
-                                sx={{ ml: 1, flex: 1, input: { color: '#858585' }  }}
-
-                                placeholder="Search Google Maps"
-                                inputProps={{ 'aria-label': 'search google maps' }}
-                                
+                                sx={{ ml: 2, flex: 1, input: { color: '#858585' }  }}
+                                placeholder="Поиск..."
                             />
                             <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
                                 <SearchIcon sx={{ color: "#C5C5C5" }}/>
