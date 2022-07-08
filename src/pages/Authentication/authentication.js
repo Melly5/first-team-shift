@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
-import { TextField,Typography, Stack, Button,
-	IconButton, InputAdornment } from "@mui/material";
-import Header from '../components/Header/header';
+import { TextField,Typography, Stack /*, Button, IconButton, InputAdornment */} from "@mui/material";
+import Header from '../../components/Header/header';
 import "./authentication.css"
 import { useNavigate } from "react-router-dom";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { borderRadius, fontWeight } from '@mui/system';
-import { Link } from "react-router-dom";
 
 function AuthenticationPage() {
 
-	const navigate = useNavigate();
+	/*const navigate = useNavigate();
 
 	const [login, setLogin] = useState("");
-	const [password, setPassword] = useState("");
+	const [password, setPassword] = useState("");*/
 	const [showPassword, setShowPassword] = useState(false);
 	const [error, setError] = useState(false);
 	const [errorText, setErrorText] = useState("");

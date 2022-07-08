@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
-import { TextField,Typography, Stack, Button,IconButton, InputAdornment, useTheme, FormHelperText } from "@mui/material";
+import { TextField,Typography, Stack/*, Button,IconButton, InputAdornment, useTheme, FormHelperText*/ } from "@mui/material";
 import "./registration.css";
-import Header from '../components/Header/header';
-
-import { useNavigate } from "react-router-dom";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import Header from '../../components/Header/header';
 import { Link } from "react-router-dom";
 import { createTheme } from '@mui/material/styles';
 
 function RegistrationPage() {
-	const [login, setLogin] = useState('')
+	/*const [login, setLogin] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
-	const [passwordConfirm, setPasswordConfirm] = useState('')
+	const [passwordConfirm, setPasswordConfirm] = useState('')*/
 
 	const [showPassword, setShowPassword] = useState(false);
 	const [errorText, setErrorText] = useState('')

@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import RegistrationPage from "./Registration/registration";
-import AuthenticationPage from "./Authentication/authentication";
+import RegistrationPage from "./pages/Registration/registration";
+import AuthenticationPage from "./pages/Authentication/authentication";
+import ChatPage from "./pages/Chat/chat";
 import { RootPage } from "./pages/root";
 import { ROUTES } from "./utils/constants/router";
 
@@ -24,7 +25,12 @@ const routes = [
 		path: "/signup",
 		name: "SignUp",
 		main: <RegistrationPage/>
-	}
+	},
+  {
+    path: "/chat",
+		name: "Chat",
+		main: <ChatPage/>
+  }
 ]
 
 function App() {

@@ -1,0 +1,23 @@
+.chatbox {
+    display: flex;
+    flex-direction: row;
+    height: calc(100% - 47px - 64px);
+}
+
+.profilebox {
+    width: 35%;
+}
+
+.dialogbox {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+.message-box {
+    height: 80%;
+}
+
+.send-box {
+    height: 20%;
+}
