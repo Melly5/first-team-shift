@@ -37,7 +37,7 @@ const Header = (props) => {
                     <div className='header-info'>
                         <Paper
                             component="form"
-                            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 218, height: 35, mr: 2 }}
+                            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 218, height: 30, mr: 2 }}
                             elevation={1}
                             style={{
                               padding: 8,
