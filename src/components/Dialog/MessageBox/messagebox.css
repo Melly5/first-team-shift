@@ -1,0 +1,47 @@
+.message-box {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    border-bottom: 2px solid var(--border);
+    height: 85%;
+}
+
+.message {
+    position: absolute;
+    padding: 9px 20px;
+    max-width: 220px;
+    margin-bottom: 17px;
+    color: var(--text);
+}
+
+.message.sent{
+    right: 32px;
+    height: auto;
+    background-color: var(--sendmes);
+    /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 5px 5px 0 5px;
+}
+
+.message.received {
+    left: 32px;
+    height:auto;
+    border-radius: 5px 5px 5px 0;
+    background-color: var(--receivemes);
+}
+.message.received.first {
+    margin-bottom: 260px;
+}
+
+.message.sent.second {
+    margin-bottom: 170px;
+}
+
+.message.received.third {
+    margin-bottom: 106px;
+}
+
+.message.sent.forth {
+    margin-bottom: 38px;
+}
+
