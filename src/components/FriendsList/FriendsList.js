@@ -3,14 +3,59 @@ import './FriendsList.css';
 
 const FriendsList = () => {
     return (
-      <div className='friends-box'>
-          <div className='first friend'>Андрей Зурко</div>
-          <div className='second friend'>Екатерина Владимирова</div>
-          <div className='third friend'>Андрей Михайлов?</div>
-          <div className='forth friend'>Адександр Смирнов</div>              
-          <div className='fifth friend'>Марина Моор</div>     
+      <div className='container'>
+        <div className='column'>
+          <div className='friends'>Друзья</div> 
+          
+            <div className='col'>
+              <div className="friends_block">
+                <div className='friends_round'></div>
+                  <div className='friends_descr'>
+                    <div className="friends_name">Андрей Зурко</div>
+                    <div class="friends_message">Написать сообщение</div>
+                  </div>     
+              </div>
+            </div>
+            <div className='col'>
+              <div className="friends_block">
+                <div className='friends_round'></div>
+                  <div className='friends_descr'>
+                    <div className="friends_name">Екатерина Владимирова</div>
+                    <div class="friends_message">Написать сообщение</div>
+                  </div>     
+              </div>
+            </div>
+            <div className='col'>
+              <div className="friends_block">
+                <div className='friends_round'></div>
+                  <div className='friends_descr'>
+                    <div className="friends_name">Андрей Михайлов</div>
+                    <div class="friends_message">Написать сообщение</div>
+                  </div>     
+              </div>
+            </div>
+            <div className='col'>
+              <div className="friends_block">
+                <div className='friends_round'></div>
+                  <div className='friends_descr'>
+                    <div className="friends_name">Александр Смирнов</div>
+                    <div class="friends_message">Написать сообщение</div>
+                  </div>     
+              </div>
+            </div>
+            <div className='col'>
+              <div className="friends_block">
+                <div className='friends_round'></div>
+                  <div className='friends_descr'>
+                    <div className="friends_name">Марина Моор</div>
+                    <div class="friends_message">Написать сообщение</div>
+                  </div>     
+              </div>
+            </div>
+          </div>
       </div>
     )
-  }
-  
+    
+}
+ 
   export default FriendsList

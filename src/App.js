@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import RegistrationPage from "./pages/Registration/registration";
 import AuthenticationPage from "./pages/Authentication/authentication";
 import ChatPage from "./pages/Chat/chat";
-import friendsPage from "./pages/Friends/Friends";
+import FriendsPage from "./pages/Friends/Friends";
 import { RootPage } from "./pages/root";
 import { ROUTES } from "./utils/constants/router";
 
@@ -36,7 +36,7 @@ const routes = [
   {
     path: "/friends",
 		name: "Friends",
-		main: <friendsPage/>
+		main: <FriendsPage/>
   },
 
 ]

@@ -54,9 +54,10 @@ code {
 .container {
 	display: flex;
 	align-items: center;
-	border-radius: 25px;
+  justify-content: center;
 	box-shadow: 0 0 6px rgba(43, 37, 87, 0.889); 
 	background-color: var(--lightblue)	;
+  
 }
 
 .auth-button {

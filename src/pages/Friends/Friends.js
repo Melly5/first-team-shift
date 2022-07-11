@@ -4,7 +4,7 @@ import Header from '../../components/Header/header';
 import FriendsList from "../../components/FriendsList/FriendsList";
 import './Friends.css';
 
-function friendsPage() {
+function FriendsPage() {
     
     return (
         <div className='mainbox signed'>
@@ -16,4 +16,4 @@ function friendsPage() {
         </div> 
     );
 }
-export default friendsPage;
+export default FriendsPage;
