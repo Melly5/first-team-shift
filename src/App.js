@@ -4,8 +4,10 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import RegistrationPage from "./pages/Registration/registration";
 import AuthenticationPage from "./pages/Authentication/authentication";
 import ChatPage from "./pages/Chat/chat";
+import friendsPage from "./pages/Friends/Friends";
 import { RootPage } from "./pages/root";
 import { ROUTES } from "./utils/constants/router";
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,7 +32,13 @@ const routes = [
     path: "/chat",
 		name: "Chat",
 		main: <ChatPage/>
-  }
+  },
+  {
+    path: "/friends",
+		name: "Friends",
+		main: <friendsPage/>
+  },
+
 ]
 
 function App() {
