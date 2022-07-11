@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { TextField, Stack, Button /*, Button,IconButton, InputAdornment, useTheme, FormHelperText*/} from "@mui/material";
-import { createTheme } from "@mui/material/styles";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { TextField, Stack, Button } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
+import { Box } from "@mui/system";
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import Header from "../../../components/Header/Header";
+import { Header } from "../../../components/Header/Header";
 import "./Registration.css";
 import "../Authentication.css";
 
@@ -31,7 +32,7 @@ const validationSchema = yup.object({
 export const RegistrationPage = () => {
   const navigate = useNavigate();
 
-  const theme = createTheme({
+  /*const theme = createTheme({
     palette: {
       primary: {
         main: "#ffffff",
@@ -45,7 +46,7 @@ export const RegistrationPage = () => {
         color: "white",
       },
     },
-  });
+  });*/
 
   const formik = useFormik({
     initialValues: {
@@ -60,9 +61,8 @@ export const RegistrationPage = () => {
     },
   });
 
-
   return (
-    <div className="mainbox unsigned">
+    <Box className="mainbox unsigned">
       <Header />
       <Stack
         direction="column"
@@ -142,6 +142,6 @@ export const RegistrationPage = () => {
         </Button>
         </form>
       </Stack>
-    </div>
+    </Box>
   );
 }

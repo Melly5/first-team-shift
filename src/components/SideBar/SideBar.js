@@ -4,7 +4,7 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import "./SideBar.css";
 
-const Options = () => {
+export const SideBar = () => {
   return (
     <div className="profilebox">
       <div className="profilebox-container">
@@ -54,5 +54,3 @@ const Options = () => {
     </div>
   );
 };
-
-export default Options;

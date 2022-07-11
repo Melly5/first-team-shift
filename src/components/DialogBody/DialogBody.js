@@ -1,15 +1,14 @@
 import React from "react";
-import Messagebox from "./DialogItem/DialogItem";
-import Sendbox from "./DialogPanel/DialogPanel";
+import { Box } from "@mui/system";
+import { DialogItem } from "./DialogItem/DialogItem";
+import { DialogPanel } from "./DialogPanel/DialogPanel";
 import "./DialogBody.css";
 
-const Dialog = () => {
+export const DialogBody = () => {
   return (
-    <div className="dialogbox">
-      <Messagebox />
-      <Sendbox />
-    </div>
+    <Box className="dialogbox">
+      <DialogItem />
+      <DialogPanel />
+    </Box>
   );
 };
-
-export default Dialog;

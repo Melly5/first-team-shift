@@ -1,9 +1,10 @@
 import React from "react";
+import { Box } from "@mui/system";
 import "./DialogItem.css";
 
-const Messagebox = () => {
+export const DialogItem = () => {
   return (
-    <div className="message-box">
+    <Box className="message-box">
       <div className="message received first">
         Мне нужны отчёты за три последних месяца, насколько я помню, ты
         говорила, что сделаешь их сегодня
@@ -11,8 +12,6 @@ const Messagebox = () => {
       <div className="message sent second">Закончила несколько минут назад</div>
       <div className="message received third">Пришлешь сейчас?</div>
       <div className="message sent forth">Да, конечно, минуту</div>
-    </div>
+    </Box>
   );
 };
-
-export default Messagebox;

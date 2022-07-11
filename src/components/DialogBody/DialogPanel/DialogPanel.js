@@ -1,12 +1,13 @@
 import React from "react";
+import { Box } from "@mui/system";
 import AttachFileOutlinedIcon from "@mui/icons-material/AttachFileOutlined";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import InputBase from "@mui/material/InputBase";
 import "./DialogPanel.css";
 
-const Sendbox = () => {
+export const DialogPanel = () => {
   return (
-    <div className="send-box">
+    <Box className="send-box">
       <AttachFileOutlinedIcon sx={{ color: "#C5C5C5" }} />
       <div className="input-message">
         <InputBase
@@ -15,8 +16,7 @@ const Sendbox = () => {
         />
       </div>
       <SendRoundedIcon sx={{ color: "#C5C5C5" }} />
-    </div>
+    </Box>
   );
 };
 
-export default Sendbox;

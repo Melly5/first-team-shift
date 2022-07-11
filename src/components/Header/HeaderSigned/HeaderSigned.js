@@ -1,22 +1,23 @@
 import React from 'react'
-import { Link, useLocation } from "react-router-dom";
-import Logo from "../../../assets/images/logo.png";
+import { Link } from "react-router-dom";
+import { Box } from "@mui/system";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import Logo from "../../../assets/images/logo.png";
 
 export const HeaderSigned = () => {
   return (
-    <div className="header signed">
-    <div className="signed-container">
-      <div className="header-logo signed">
+    <Box className="header signed">
+    <Box className="signed-container">
+      <Box className="header-logo signed">
         <Link to="/login" style={{ textDecoration: "none" }}>
           <img src={Logo} alt="logo" />
         </Link>
-      </div>
-      <div className="header-info">
+      </Box>
+      <Box className="header-info">
         <Paper
           component="form"
           sx={{
@@ -45,8 +46,8 @@ export const HeaderSigned = () => {
         <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
           <NotificationsNoneIcon sx={{ color: "#C5C5C5" }} />
         </IconButton>
-      </div>
-    </div>
-  </div>
+      </Box>
+    </Box>
+  </Box>
   )
 }

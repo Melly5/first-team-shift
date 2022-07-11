@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { TextField, Stack, Button} from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { TextField, Stack, Button} from "@mui/material";
+import { Box } from "@mui/system";
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import Header from "../../../components/Header/Header";
+import { Header } from "../../../components/Header/Header";
 import "./Authorization.css";
 import "../Authentication.css";
 
@@ -20,22 +21,8 @@ const validationSchema = yup.object({
 
 
 export const AuthorizationPage = () => {
-  /*const navigate = useNavigate();
-
-	const [login, setLogin] = useState("");
-	const [password, setPassword] = useState("");*/
-  const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState(false);
-  const [errorText, setErrorText] = useState("");
-
   const [inputValue, setInputValue] = React.useState("");
-
   const navigate = useNavigate();
-
-  const onClick = () => {
-    console.log("@", inputValue);
-    navigate(`/chat`);
-  };
 
   const onChange = (event) => {
     const { value } = event.target;
@@ -55,7 +42,7 @@ export const AuthorizationPage = () => {
   });
 
   return (
-    <div className="mainbox unsigned">
+    <Box className="mainbox unsigned">
       <Header />
       <Stack direction="column" className="container login" alignItems="center">
         <div className="auth-text">Вход</div>
@@ -98,6 +85,6 @@ export const AuthorizationPage = () => {
         </Button>
         </form>
       </Stack>
-    </div>
+    </Box>
   );
 };
