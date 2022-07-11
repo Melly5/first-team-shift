@@ -1,7 +1,7 @@
 import React from "react";
-import "./dialog.css";
-import Messagebox from "./MessageBox/messagebox";
-import Sendbox from "./SendBox/sendbox";
+import Messagebox from "./DialogItem/DialogItem";
+import Sendbox from "./DialogPanel/DialogPanel";
+import "./DialogBody.css";
 
 const Dialog = () => {
   return (

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { TextField, Typography, Stack /*, Button,IconButton, InputAdornment, useTheme, FormHelperText*/} from "@mui/material";
-import "./registration.css";
-import Header from "../../components/Header/header";
-import { Link } from "react-router-dom";
+import { TextField, Stack /*, Button,IconButton, InputAdornment, useTheme, FormHelperText*/} from "@mui/material";
 import { createTheme } from "@mui/material/styles";
+import Header from "../../components/Header/Header";
+import "./Registration.css";
 
 function RegistrationPage() {
   /*const [login, setLogin] = useState("");

@@ -1,1 +1,3 @@
-//export { default as Header } from './Header/header';
+export * from './Header/Header';
+export * from './DialogBody/DialogBody';
+export * from './SideBar/SideBar';

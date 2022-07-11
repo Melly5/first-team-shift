@@ -1,5 +1,5 @@
 import React from "react";
-import "./messagebox.css";
+import "./DialogItem.css";
 
 const Messagebox = () => {
   return (

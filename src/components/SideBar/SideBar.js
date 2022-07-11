@@ -2,7 +2,7 @@ import React from "react";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
-import "./options.css";
+import "./SideBar.css";
 
 const Options = () => {
   return (

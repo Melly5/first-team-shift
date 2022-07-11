@@ -1,8 +1,8 @@
 import React from "react";
 import AttachFileOutlinedIcon from "@mui/icons-material/AttachFileOutlined";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
-import { InputBase } from "@mui/material";
-import "./sendbox.css";
+import InputBase from "@mui/material/InputBase";
+import "./DialogPanel.css";
 
 const Sendbox = () => {
   return (

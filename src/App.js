@@ -1,11 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import RegistrationPage from "./pages/Registration/registration";
-import AuthenticationPage from "./pages/Authentication/authentication";
-import ChatPage from "./pages/Chat/chat";
-import { RootPage } from "./pages/root";
-import { ROUTES } from "./utils/constants/router";
+import RegistrationPage from "./pages/Registration/Registration";
+import AuthenticationPage from "./pages/Authentication/Authentication";
+import ChatPage from "./pages/Chat/Chat";
+//import { ROUTES } from "./utils/constants/router";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -14,7 +13,7 @@ const queryClient = new QueryClient({
     },
   },
 });
-
+//<Route path={ROUTES.ROOT} element={<RootPage />} />
 const routes = [
   {
     path: "/login",
@@ -38,7 +37,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          <Route path={ROUTES.ROOT} element={<RootPage />} />
+          
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={route.main} />
           ))}

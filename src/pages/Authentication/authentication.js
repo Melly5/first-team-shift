@@ -1,12 +1,8 @@
 import React, { useState } from "react";
-import {
-  TextField,
-  Typography,
-  Stack /*, Button, IconButton, InputAdornment */,
-} from "@mui/material";
-import Header from "../../components/Header/header";
-import "./authentication.css";
-import { Link, useNavigate } from "react-router-dom";
+import { TextField, Stack /*, Button, IconButton, InputAdornment */} from "@mui/material";
+import Header from "../../components/Header/Header";
+import { Link } from "react-router-dom";
+import "./Authentication.css";
 
 function AuthenticationPage() {
   /*const navigate = useNavigate();
