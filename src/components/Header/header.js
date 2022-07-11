@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../assets/images/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import { HeaderUnsigned } from "./HeaderUnsigned/HeaderUnsigned";
 import { HeaderSigned } from "./HeaderSigned/HeaderSigned";

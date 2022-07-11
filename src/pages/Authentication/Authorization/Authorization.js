@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { TextField, Stack /*, Button, IconButton, InputAdornment */} from "@mui/material";
-import { Link } from "react-router-dom";
+import {
+  TextField,
+  Stack /*, Button, IconButton, InputAdornment */,
+} from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
+import { useFormik } from 'formik';
 import Header from "../../../components/Header/Header";
 import "./Authorization.css";
 import "../Authentication.css";
@@ -14,6 +18,21 @@ export const AuthorizationPage = () => {
   const [error, setError] = useState(false);
   const [errorText, setErrorText] = useState("");
 
+  const [inputValue, setInputValue] = React.useState("");
+
+  const navigate = useNavigate();
+
+  const onClick = () => {
+    console.log("@", inputValue);
+    navigate(`/chat`);
+  };
+
+  const onChange = (event) => {
+    const { value } = event.target;
+    console.log("@", inputValue);
+    setInputValue(value);
+  };
+
   return (
     <div className="mainbox unsigned">
       <Header />
@@ -26,7 +45,7 @@ export const AuthorizationPage = () => {
           variant="standard"
           borderRadius="30"
           fullWidth
-          //onChange={(event) => handleLoginOnChange(event)}
+          onChange={onChange}
         />
         <TextField
           sx={{ marginTop: "7px" }}
@@ -35,22 +54,17 @@ export const AuthorizationPage = () => {
           variant="standard"
           fullWidth
           type={showPassword ? "text" : "password"}
-          //onChange={(event) => handlePasswordOnChange(event)}
+          onChange={onChange}
           helperText={errorText}
           error={error}
           /*InputProps={{
 						endAdornment: showPasswordIcon()
 					}}*/
         />
-        <div
-          className="auth-button login" /*onClick={() => handleSignInResponse()}*/
-        >
-          <Link to="/chat" style={{ textDecoration: "none", color: "white" }}>
+        <div className="auth-button login" onClick={onClick}>
             Войти
-          </Link>
         </div>
       </Stack>
     </div>
   );
-}
-
+};
