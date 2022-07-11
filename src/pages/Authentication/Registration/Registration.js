@@ -1,27 +1,40 @@
 import React, { useState } from "react";
-import { TextField, Stack /*, Button,IconButton, InputAdornment, useTheme, FormHelperText*/} from "@mui/material";
+import { TextField, Stack, Button /*, Button,IconButton, InputAdornment, useTheme, FormHelperText*/} from "@mui/material";
 import { createTheme } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
+import { useFormik } from 'formik';
+import * as yup from 'yup';
 import Header from "../../../components/Header/Header";
 import "./Registration.css";
 import "../Authentication.css";
 
-export const RegistrationPage = () => {
-  /*const [login, setLogin] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirm, setPasswordConfirm] = useState("");*/
+const validationSchema = yup.object({
+  email: yup
+    .string('Введите логин')
+    .email('Некорректная почта')
+    .required('Это поле не может быть пустым'),
+  nickname: yup
+    .string('Введите ФИО')
+    .required('Это поле не может быть пустым'),
+  password: yup
+    .string('Введите пароль')
+    .min(8, 'Пароль должен содержать минимум 8 знаков')
+    .required('Это поле не может быть пустым'),
+  confirmPassword:  yup
+  .string('Повторите пароль')
+  .min(8, 'Пароль должен содержать минимум 8 знаков')
+  .oneOf([yup.ref('password'), null], "Пароли не совпадают")
+  .required('Это поле не может быть пустым'),
+});
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [errorText, setErrorText] = useState("");
-  const [error, setError] = useState(false);
+
+export const RegistrationPage = () => {
+  const navigate = useNavigate();
 
   const theme = createTheme({
     palette: {
       primary: {
-        // light: will be calculated from palette.primary.main,
         main: "#ffffff",
-        // dark: will be calculated from palette.primary.main,
-        // contrastText: will be calculated to contrast with palette.primary.main
         dark: "#ACA6BB",
         contrastText: "#fff",
       },
@@ -34,44 +47,19 @@ export const RegistrationPage = () => {
     },
   });
 
-  /*const handleRegistrationResponse = async () => {
-    if (
-      login === "" ||
-      email === "" ||
-      password === "" ||
-      passwordConfirm === ""
-    ) {
-      enableError("One or more fields are empty.");
-      return;
-    }
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      nickname: '',
+      password: '',
+      confirmPassword: '',
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      navigate(`/chat`);
+    },
+  });
 
-    const emailRegular =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!emailRegular.test(email)) {
-      enableError("Email is incorrect.");
-      return;
-    }
-
-    if (password !== passwordConfirm) {
-      enableError("Confirmation password is incorrect.");
-      return;
-    }
-	*/
-    /*const responseSignUp = await auth.signUp(login, email, password);
-
-		if (responseSignUp === "failure") {
-			enableError("Sign up failed.");
-			return;
-		}*/
-
-    /*const responseSignIn = await auth.signIn(login, password);
-
-		if (responseSignIn === "failure") {
-			enableError("Sign in failed.");
-			return;
-		}*/
-
-    //navigate(`/tasks`, {replace: true});
 
   return (
     <div className="mainbox unsigned">
@@ -82,6 +70,7 @@ export const RegistrationPage = () => {
         alignItems="center"
       >
         <div className="auth-text">Регистрация</div>
+        <form onSubmit={formik.handleSubmit}>
         <TextField
           sx={{ marginTop: "5px" }}
           type="text"
@@ -89,24 +78,42 @@ export const RegistrationPage = () => {
           variant="standard"
           className="StandardInput"
           fullWidth
-          //onChange={handleLoginOnChange}
+          id="email"
+          name="email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          error={formik.touched.email && Boolean(formik.errors.email)}
+          helperText={formik.touched.email && formik.errors.email}
         />
         <TextField
           sx={{ marginTop: "5px" }}
-          type="email"
+          type="text"
           label="ФИО"
           className="StandardInput"
           variant="standard"
           fullWidth
-          //onChange={handleEmailOnChange}
+          id="nickname"
+          name="nickname"
+          value={formik.values.nickname}
+          onChange={formik.handleChange}
+          error={formik.touched.nickname && Boolean(formik.errors.nickname)}
+          helperText={formik.touched.nickname && formik.errors.nickname}
         />
         <TextField
           sx={{ marginTop: "5px" }}
           label="Пароль"
-          type={showPassword ? "text" : "password"}
+          //type={showPassword ? "text" : "password"}
           className="StandardInput"
           variant="standard"
+          id="password"
+          name="password"
+          type="password"
           fullWidth
+          //type={showPassword ? "text" : "password"}
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          error={formik.touched.password && Boolean(formik.errors.password)}
+          helperText={formik.touched.password && formik.errors.password}
           //onChange={handlePasswordOnChange}
           /*InputProps={{
 						
@@ -116,19 +123,24 @@ export const RegistrationPage = () => {
         <TextField
           sx={{ marginTop: "5px" }}
           label="Повторите пароль"
-          type={showPassword ? "text" : "password"}
+          //type={showPassword ? "text" : "password"}
           className="StandardInput"
           variant="standard"
           fullWidth
-          helperText={errorText}
-          error={error}
+          id="confirmPassword"
+          name="confirmPassword"
+          type="confirmPassword"
+          //type={showPassword ? "text" : "password"}
+          value={formik.values.confirmPassword}
+          onChange={formik.handleChange}
+          error={formik.touched.confirmPassword && Boolean(formik.errors.confirmPassword)}
+          helperText={formik.touched.confirmPassword && formik.errors.confirmPassword}
           //onChange={handlePasswordConfirmOnChange}
         />
-        <div
-          className="auth-button signup" /*onClick={handleRegistrationResponse} */
-        >
+        <Button type="submit" className="auth-button signup" >
           Зарегистрироваться
-        </div>
+        </Button>
+        </form>
       </Stack>
     </div>
   );
