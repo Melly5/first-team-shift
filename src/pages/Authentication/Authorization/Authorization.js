@@ -1,13 +1,23 @@
 import React, { useState } from "react";
-import {
-  TextField,
-  Stack /*, Button, IconButton, InputAdornment */,
-} from "@mui/material";
+import { TextField, Stack, Button, /*IconButton, InputAdornment */} from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from 'formik';
+import * as yup from 'yup';
 import Header from "../../../components/Header/Header";
 import "./Authorization.css";
 import "../Authentication.css";
+
+const validationSchema = yup.object({
+  email: yup
+    .string('Введите логин')
+    .email('Некорректная почта')
+    .required('Это поле не может быть пустым'),
+  password: yup
+    .string('Введите пароль')
+    .min(8, 'Пароль должен содержать минимум 8 знаков')
+    .required('Это поле не может быть пустым'),
+});
+
 
 export const AuthorizationPage = () => {
   /*const navigate = useNavigate();
@@ -33,11 +43,23 @@ export const AuthorizationPage = () => {
     setInputValue(value);
   };
 
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      navigate(`/chat`);
+    },
+  });
+
   return (
     <div className="mainbox unsigned">
       <Header />
       <Stack direction="column" className="container login" alignItems="center">
         <div className="auth-text">Вход</div>
+        <form onSubmit={formik.handleSubmit}>
         <TextField
           sx={{ marginTop: "7px" }}
           className="login-input"
@@ -45,25 +67,36 @@ export const AuthorizationPage = () => {
           variant="standard"
           borderRadius="30"
           fullWidth
-          onChange={onChange}
+          id="email"
+          name="email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          error={formik.touched.email && Boolean(formik.errors.email)}
+          helperText={formik.touched.email && formik.errors.email}
         />
         <TextField
           sx={{ marginTop: "7px" }}
           className="login-input"
           label="Пароль"
           variant="standard"
+          id="password"
+          name="password"
+          type="password"
           fullWidth
-          type={showPassword ? "text" : "password"}
-          onChange={onChange}
-          helperText={errorText}
-          error={error}
+          //type={showPassword ? "text" : "password"}
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          error={formik.touched.password && Boolean(formik.errors.password)}
+          helperText={formik.touched.password && formik.errors.password}
+
           /*InputProps={{
 						endAdornment: showPasswordIcon()
 					}}*/
         />
-        <div className="auth-button login" onClick={onClick}>
+        <Button type="submit" className="auth-button login" >
             Войти
-        </div>
+        </Button>
+        </form>
       </Stack>
     </div>
   );
