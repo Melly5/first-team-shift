@@ -4,7 +4,7 @@ import SideBar from "../../components/SideBar/SideBar";
 import DialogBody from "../../components/DialogBody/DialogBody";
 import "./Chat.css";
 
-function ChatPage() {
+export const ChatPage = () => {
   return (
     <div className="mainbox signed">
       <Header />
@@ -16,4 +16,3 @@ function ChatPage() {
   );
 }
 
-export default ChatPage;

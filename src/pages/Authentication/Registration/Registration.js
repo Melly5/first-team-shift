@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { TextField, Stack /*, Button,IconButton, InputAdornment, useTheme, FormHelperText*/} from "@mui/material";
 import { createTheme } from "@mui/material/styles";
-import Header from "../../components/Header/Header";
+import Header from "../../../components/Header/Header";
 import "./Registration.css";
+import "../Authentication.css";
 
-function RegistrationPage() {
+export const RegistrationPage = () => {
   /*const [login, setLogin] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -80,7 +81,7 @@ function RegistrationPage() {
         className="container signup"
         alignItems="center"
       >
-        <p className="login-text">Регистрация</p>
+        <div className="auth-text">Регистрация</div>
         <TextField
           sx={{ marginTop: "5px" }}
           type="text"
@@ -132,5 +133,3 @@ function RegistrationPage() {
     </div>
   );
 }
-
-export default RegistrationPage;

@@ -3,7 +3,7 @@
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--color-secondary);
   height: 85%;
 }
 
@@ -12,13 +12,13 @@
   padding: 9px 20px;
   max-width: 220px;
   margin-bottom: 17px;
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .message.sent {
   right: 32px;
   height: auto;
-  background-color: var(--sendmes);
+  background-color: var(--color-send-message);
   /* top-left | top-right | bottom-right | bottom-left */
   border-radius: 5px 5px 0 5px;
 }
@@ -27,7 +27,7 @@
   left: 32px;
   height: auto;
   border-radius: 5px 5px 5px 0;
-  background-color: var(--receivemes);
+  background-color: var(--color-receive-message);
 }
 .message.received.first {
   margin-bottom: 260px;

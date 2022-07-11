@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { TextField, Stack /*, Button, IconButton, InputAdornment */} from "@mui/material";
-import Header from "../../components/Header/Header";
 import { Link } from "react-router-dom";
-import "./Authentication.css";
+import Header from "../../../components/Header/Header";
+import "./Authorization.css";
+import "../Authentication.css";
 
-function AuthenticationPage() {
+export const AuthorizationPage = () => {
   /*const navigate = useNavigate();
 
 	const [login, setLogin] = useState("");
@@ -17,7 +18,7 @@ function AuthenticationPage() {
     <div className="mainbox unsigned">
       <Header />
       <Stack direction="column" className="container login" alignItems="center">
-        <p className="login-text">Вход</p>
+        <div className="auth-text">Вход</div>
         <TextField
           sx={{ marginTop: "7px" }}
           className="login-input"
@@ -53,4 +54,3 @@ function AuthenticationPage() {
   );
 }
 
-export default AuthenticationPage;
