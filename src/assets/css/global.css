@@ -5,10 +5,10 @@
 
 :root {
   --border: #042d5d;
-  --lightblue: #243D5E;
-  --text: #C5C5C5;
-  --sendmes: #5A20FF;
-  --receivemes: #13263E;
+  --lightblue: #243d5e;
+  --text: #c5c5c5;
+  --sendmes: #5a20ff;
+  --receivemes: #13263e;
 }
 
 body {
@@ -26,14 +26,14 @@ code {
 }
 
 .mainbox {
-  background-image: url("../backg-signed.png");
+  background-image: url("../images/backg-signed.png");
   background-size: cover;
   height: 100vh;
 }
 
 .mainbox.unsigned {
   padding: 0 239px;
-  background-image: url("../backg-unsigned.png");
+  background-image: url("../images/backg-unsigned.png");
 }
 
 .mainbox.signed {
@@ -42,36 +42,35 @@ code {
   flex-direction: column;
 }
 
-
-.login-text{
-	font-size: 28px;
-	font-weight: 500;
-	margin-top: 25px;
-	margin-bottom: 0;
-	color: white;
+.login-text {
+  font-size: 28px;
+  font-weight: 500;
+  margin-top: 25px;
+  margin-bottom: 0;
+  color: white;
 }
 
 .container {
-	display: flex;
-	align-items: center;
-	border-radius: 25px;
-	box-shadow: 0 0 6px rgba(43, 37, 87, 0.889); 
-	background-color: var(--lightblue)	;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 0 0 6px rgba(43, 37, 87, 0.889);
+  background-color: var(--lightblue);
 }
 
 .auth-button {
-	margin-top: 30px;
+  margin-top: 30px;
   margin-bottom: 5px;
-	background: linear-gradient(to right, #3F51B5 0%,#6173DB 100%);
-	padding: 0.8rem 0.2rem;
+  background: linear-gradient(to right, #3f51b5 0%, #6173db 100%);
+  padding: 0.8rem 0.2rem;
   color: #fff;
   font-weight: 500;
   font-size: 17px;
   border: none;
-	border-radius: 5px;
+  border-radius: 5px;
   outline: none;
   cursor: pointer;
-	text-align: center;
+  text-align: center;
 }
 
 .auth-button.login {

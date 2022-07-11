@@ -17,21 +17,21 @@ const queryClient = new QueryClient({
 
 const routes = [
   {
-		path: "/login",
-		name: "Login",
-		main: <AuthenticationPage/>
-	},
+    path: "/login",
+    name: "Login",
+    main: <AuthenticationPage />,
+  },
   {
-		path: "/signup",
-		name: "SignUp",
-		main: <RegistrationPage/>
-	},
+    path: "/signup",
+    name: "SignUp",
+    main: <RegistrationPage />,
+  },
   {
     path: "/chat",
-		name: "Chat",
-		main: <ChatPage/>
-  }
-]
+    name: "Chat",
+    main: <ChatPage />,
+  },
+];
 
 function App() {
   return (
@@ -39,13 +39,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={ROUTES.ROOT} element={<RootPage />} />
-          {routes.map((route,index) => (
-									<Route
-										key = {index}
-										path = {route.path}
-										element = {route.main}
-									/>
-							))}
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} element={route.main} />
+          ))}
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
