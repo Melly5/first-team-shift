@@ -1,12 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import RegistrationPage from "./pages/Registration/registration";
-import AuthenticationPage from "./pages/Authentication/authentication";
-import ChatPage from "./pages/Chat/chat";
+
+import { RegistrationPage } from "./pages/Authentication/Registration/Registration";
+import { AuthorizationPage } from "./pages/Authentication/Authorization/Authorization";
+import { ChatPage } from "./pages/Chat/Chat";
 import FriendsPage from "./pages/Friends/Friends";
-import { RootPage } from "./pages/root";
-import { ROUTES } from "./utils/constants/router";
 
 
 const queryClient = new QueryClient({
@@ -17,43 +16,18 @@ const queryClient = new QueryClient({
   },
 });
 
-const routes = [
-  {
-		path: "/login",
-		name: "Login",
-		main: <AuthenticationPage/>
-	},
-  {
-		path: "/signup",
-		name: "SignUp",
-		main: <RegistrationPage/>
-	},
-  {
-    path: "/chat",
-		name: "Chat",
-		main: <ChatPage/>
-  },
-  {
-    path: "/friends",
-		name: "Friends",
-		main: <FriendsPage/>
-  },
-
-]
+//<Route path={ROUTES.ROOT} element={<RootPage />} />
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          <Route path={ROUTES.ROOT} element={<RootPage />} />
-          {routes.map((route,index) => (
-									<Route
-										key = {index}
-										path = {route.path}
-										element = {route.main}
-									/>
-							))}
+          <Route path="/signup" element={<RegistrationPage />} />
+          <Route path="/login" element={<AuthorizationPage />} />
+          <Route path="/chat" element={<ChatPage />} />
+          <Route path="/" element={<ChatPage />} />
+          <Route path="/friends" element={<FriendsPage />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

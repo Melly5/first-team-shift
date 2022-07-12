@@ -1,8 +1,6 @@
 .chatbox {
-    display: flex;
-    flex-direction: row;
-    height: calc(100% - 47px - 69px);
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 47px - 69px);
+  width: 100%;
 }
-
-

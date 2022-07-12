@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
-import Header from '../../components/Header/header';
-import Options from '../../components/Options/options';
-import Dialog from '../../components/Dialog/dialog';
-import "./chat.css";
+import React from "react";
+import { Box } from "@mui/system";
+import { Header } from "../../components/Header/Header";
+import { SideBar } from "../../components/SideBar/SideBar";
+import { DialogBody } from "../../components/DialogBody/DialogBody";
+import "./Chat.css";
 
-function ChatPage() {
-
-    return (
-        <div className='mainbox signed'>
-            <Header/>
-            <div className='chatbox'>
-                <Options/>
-                <Dialog/>
-            </div>
-        </div>  
-    );
+export const ChatPage = () => {
+  return (
+    <Box className="mainbox signed">
+      <Header />
+      <Box className="chatbox">
+        <SideBar/>
+        <DialogBody/>
+      </Box>
+    </Box>
+  );
 }
 
-export default ChatPage;

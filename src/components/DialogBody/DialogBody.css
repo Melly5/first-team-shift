@@ -1,0 +1,7 @@
+.dialogbox {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  border-top: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+}
