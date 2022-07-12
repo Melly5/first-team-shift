@@ -56,7 +56,8 @@ code {
 	align-items: center;
   justify-content: center;
 	box-shadow: 0 0 6px rgba(43, 37, 87, 0.889); 
-	background-color: var(--lightblue)	;
+	background-color: var(--lightblue);
+  border-radius: 10px 10px 10px 10px;
   
 }
 

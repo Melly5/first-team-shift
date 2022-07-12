@@ -3,10 +3,10 @@ import './FriendsList.css';
 
 const FriendsList = () => {
     return (
-      <div className='container'>
-        <div className='column'>
+      <div className='friendslist'>
+        <div className='container'>
+          <div className='row'>
           <div className='friends'>Друзья</div> 
-          
             <div className='col'>
               <div className="friends_block">
                 <div className='friends_round'></div>
@@ -53,6 +53,7 @@ const FriendsList = () => {
               </div>
             </div>
           </div>
+      </div>
       </div>
     )
     
