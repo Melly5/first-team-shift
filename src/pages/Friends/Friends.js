@@ -1,19 +1,18 @@
 import React from "react";
-import Options from "../../components/Options/options";
-import Header from '../../components/Header/header';
-import FriendsList from "../../components/FriendsList/FriendsList";
+import { SideBar } from "../../components";
+import { Header } from '../../components/Header/Header';
+import { FriendsList } from "../../components/FriendsList/FriendsList";
 import './Friends.css';
 
-function FriendsPage() {
+export const Friends = () => {
     
     return (
         <div className='mainbox signed'>
             <Header/>
             <div className='friendsbox'>
-                <Options/>
+                <SideBar/>
                 <FriendsList/>
             </div>
         </div> 
     );
 }
-export default FriendsPage;

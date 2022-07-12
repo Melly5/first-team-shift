@@ -59,6 +59,7 @@
 
 .profile-nickname {
   font-size: 18px;
+  cursor: pointer;
 }
 
 .status-info {
@@ -75,6 +76,7 @@
 .option {
   margin-left: 15px;
   color: var(--color-text);
+  cursor: pointer;
 }
 
 .options-item {
@@ -97,4 +99,5 @@
 .profile-nickname.list {
   margin-left: 15px;
   color: var(--color-text);
+  cursor: pointer;
 }

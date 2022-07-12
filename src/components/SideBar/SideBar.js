@@ -1,17 +1,29 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import "./SideBar.css";
 
 export const SideBar = () => {
+
+  const navigate = useNavigate();
+
+  const onClickFriends = () => {
+    navigate(`/friends`);
+  }
+
+  const onClickProfile = () => {
+    navigate(`/friends`);
+  }
+
   return (
     <div className="profilebox">
       <div className="profilebox-container">
         <div className="profile">
           <div className="profile-photo"></div>
           <div className="profile-info">
-            <div className="profile-nickname">Александр</div>
+            <div className="profile-nickname" onClick ={ onClickProfile }>Александр</div>
             <div className="status">
               <div className="status-icon"></div>
               <div className="status-info">в сети</div>
@@ -24,7 +36,7 @@ export const SideBar = () => {
           <div className="options-icon">
             <PeopleOutlineIcon sx={{ color: "#C5C5C5" }} />
           </div>
-          <div className="option">Друзья</div>
+          <div className="option" onClick={onClickFriends}>Друзья</div>
         </div>
         <div className="options-item">
           <div className="options-icon">
