@@ -1,5 +1,11 @@
 .friendslist {
-    padding: 30px 68px 80px 68px;;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    border-top: 2px solid var(--border);
+    border-right: 2px solid var(--border);
+    padding-top: 20px ;
+    padding-left: 68px;
 }
 .container {
     box-sizing: border-box;
@@ -41,7 +47,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 35px;
+    margin-top: 30px;
 }
 
 
