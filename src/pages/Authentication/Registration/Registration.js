@@ -7,7 +7,30 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { Header } from "../../../components/Header/Header";
 import "./Registration.css";
-import "../Authentication.css";
+import { makeStyles } from '@mui/styles';
+//import { ROUTES } from "./utils/constants/router";
+
+const useStyles = makeStyles({
+  input: {
+    color: 'white'
+  },
+  Button: {
+    marginTop: "30px",
+    marginBottom: "5px",
+    background:
+      "linear-gradient(to right, #3f51b5 0%, #6173db 100%)",
+    padding: "0.6rem 1.5rem",
+    color: "#fff",
+    fontSize: "17px",
+    borderRadius: "5px",
+  },
+  root: {
+    color: 'white',
+    "&.Mui-focused": {
+      color: "white"
+    }
+  }
+});
 
 const validationSchema = yup.object({
   email: yup
@@ -31,22 +54,7 @@ const validationSchema = yup.object({
 
 export const RegistrationPage = () => {
   const navigate = useNavigate();
-
-  /*const theme = createTheme({
-    palette: {
-      primary: {
-        main: "#ffffff",
-        dark: "#ACA6BB",
-        contrastText: "#fff",
-      },
-      TextField: {
-        marginTop: 5,
-      },
-      input: {
-        color: "white",
-      },
-    },
-  });*/
+  const classes = useStyles();
 
   const formik = useFormik({
     initialValues: {
@@ -76,10 +84,13 @@ export const RegistrationPage = () => {
           type="text"
           label="Логин/Почта"
           variant="standard"
-          className="StandardInput"
+          InputProps={{
+            className: classes.root
+          }}
           fullWidth
           id="email"
           name="email"
+          //color = {classes.color}
           value={formik.values.email}
           onChange={formik.handleChange}
           error={formik.touched.email && Boolean(formik.errors.email)}
@@ -93,11 +104,14 @@ export const RegistrationPage = () => {
           variant="standard"
           fullWidth
           id="nickname"
-          name="nickname"
+          name="nickname"        
           value={formik.values.nickname}
           onChange={formik.handleChange}
           error={formik.touched.nickname && Boolean(formik.errors.nickname)}
           helperText={formik.touched.nickname && formik.errors.nickname}
+          InputProps={{
+            className: classes.root
+          }}
         />
         <TextField
           sx={{ marginTop: "5px" }}
@@ -114,6 +128,10 @@ export const RegistrationPage = () => {
           onChange={formik.handleChange}
           error={formik.touched.password && Boolean(formik.errors.password)}
           helperText={formik.touched.password && formik.errors.password}
+          InputProps={{
+            className: classes.root
+          }}
+          
           //onChange={handlePasswordOnChange}
           /*InputProps={{
 						
@@ -135,11 +153,20 @@ export const RegistrationPage = () => {
           onChange={formik.handleChange}
           error={formik.touched.confirmPassword && Boolean(formik.errors.confirmPassword)}
           helperText={formik.touched.confirmPassword && formik.errors.confirmPassword}
+          InputProps={{
+            className: classes.root
+          }}
+          
           //onChange={handlePasswordConfirmOnChange}
         />
-        <Button type="submit" className="auth-button signup" >
-          Зарегистрироваться
-        </Button>
+        <Box style={{ textAlign: "center" }}>
+            <Button
+              type="submit"
+              className={classes.Button}
+            >
+              Зарегистрироваться
+            </Button>
+          </Box>
         </form>
       </Stack>
     </Box>

@@ -5,7 +5,8 @@ import { HeaderSigned } from "./HeaderSigned/HeaderSigned";
 import "./Header.css";
 
 export const Header = () => {
-  const pathname = useLocation().pathname;
+  const {pathname} = useLocation();
+  //const pathname = useLocation().pathname;
   return (pathname === "/login") | (pathname === "/signup") ? <HeaderUnsigned/> : <HeaderSigned/>;
 };
 

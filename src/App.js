@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { RegistrationPage } from "./pages/Authentication/Registration/Registration";
 import { AuthorizationPage } from "./pages/Authentication/Authorization/Authorization";
 import { ChatPage } from "./pages/Chat/Chat";
-//import { ROUTES } from "./utils/constants/router";
 
 const queryClient = new QueryClient({
   defaultOptions: {
