@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
+import { Box } from "@mui/system";
 import "./SideBar.css";
 
 export const SideBar = () => {
 
   const navigate = useNavigate();
+
+  const users = [
+    {
+      letters: 'AЗ',
+      name: 'Андрей З.',
+      isInNetwork: true
+    },
+    {
+      letters: 'ЕВ',
+      name: 'Екатерина В.',
+      isInNetwork: true
+    },
+    {
+      letters: 'AМ',
+      name: 'Андрей М.',
+      isInNetwork: false
+    }
+  ]
 
   const onClickFriends = () => {
     navigate(`/friends`);
@@ -18,19 +37,19 @@ export const SideBar = () => {
   }
 
   return (
-    <div className="profilebox">
-      <div className="profilebox-container">
-        <div className="profile">
-          <div className="profile-photo"></div>
-          <div className="profile-info">
-            <div className="profile-nickname" onClick ={ onClickProfile }>Александр</div>
-            <div className="status">
-              <div className="status-icon"></div>
-              <div className="status-info">в сети</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <Box className="profilebox">
+      <Box className="profilebox-container">
+        <Box className="profile">
+          <Box className="profile-photo"></Box>
+          <Box className="profile-info">
+            <Box className="profile-nickname" onClick ={ onClickProfile }>Александр</Box>
+            <Box className="status">
+              <Box className="status-icon"></Box>
+              <Box className="status-info">в сети</Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
       <div className="options">
         <div className="options-item">
           <div className="options-icon">
@@ -45,24 +64,32 @@ export const SideBar = () => {
           <div className="option">Настройки</div>
         </div>
       </div>
-      <div className="messages">
-        <div className="messages-logo">
+      <Box className="messages">
+        <Box className="messages-logo">
           <KeyboardArrowDownOutlinedIcon sx={{ color: "#5A20FF" }} />
-          <div className="message-info">Сообщения</div>
-        </div>
-        <div className="messages-item">
-          <div className="profile-photo list"></div>
-          <div className="profile-nickname list">Александр</div>
-        </div>
-        <div className="messages-item">
-          <div className="profile-photo list"></div>
-          <div className="profile-nickname list">Александр</div>
-        </div>
-        <div className="messages-item">
-          <div className="profile-photo list"></div>
-          <div className="profile-nickname list">Александр</div>
-        </div>
-      </div>
-    </div>
+          <span className="message-info">Сообщения</span>
+        </Box>
+        {users.map((user) => 
+        <Box className="messages-item">
+          <Box sx={{ padding: 0, margin: 0, position: 'relative',}}>
+            <Box className="profile-photo list"/>
+            { user.isInNetwork && <Box
+              sx={{
+                backgroundColor: '#4FB14F',
+                border: '1px solid #F1F7FA',
+                width: 7,
+                height: 7,
+                position: 'absolute',
+                bottom: 2,
+                right: 2,
+                borderRadius: '4px'
+              }}
+            ></Box> }
+          </Box>
+          <Box className="profile-nickname list">{ user.name }</Box>
+        </Box>
+        )}
+      </Box>
+    </Box>
   );
 };
