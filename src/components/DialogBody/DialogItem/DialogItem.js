@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, ListItem, List, ListItemText, Grid } from "@mui/material";
+import { Box, ListItem, List, ListItemText } from "@mui/material";
 import AttachFileOutlinedIcon from "@mui/icons-material/AttachFileOutlined";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import InputBase from "@mui/material/InputBase";

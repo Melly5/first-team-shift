@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, ListItem, List, ListItemText, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import "./FriendsList.css";
 
 export const FriendsList = () => {

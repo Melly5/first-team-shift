@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
@@ -50,20 +50,20 @@ export const SideBar = () => {
           </Box>
         </Box>
       </Box>
-      <div className="options">
-        <div className="options-item">
+      <Box className="options">
+        <Box className="options-item">
           <div className="options-icon">
             <PeopleOutlineIcon sx={{ color: "#C5C5C5" }} />
           </div>
           <div className="option" onClick={onClickFriends}>Друзья</div>
-        </div>
-        <div className="options-item">
+        </Box>
+        <Box className="options-item">
           <div className="options-icon">
             <SettingsOutlinedIcon sx={{ color: "#C5C5C5" }} />
           </div>
           <div className="option">Настройки</div>
-        </div>
-      </div>
+        </Box>
+      </Box>
       <Box className="messages">
         <Box className="messages-logo">
           <KeyboardArrowDownOutlinedIcon sx={{ color: "#5A20FF" }} />
