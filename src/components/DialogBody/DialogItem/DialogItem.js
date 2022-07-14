@@ -57,14 +57,14 @@ export const DialogItem = () => {
       </Box>
       <Box className="send-box">
         <AttachFileOutlinedIcon sx={{ color: "#C5C5C5" }} />
-        <div className="input-message">
+        <Box className="input-message">
           <InputBase
             sx={{ ml: 2, mt: 0.5, input: { color: "#C5C5C5" } }}
             placeholder="Введите сообщение..."
             onChange={onChange}
             value={value}
           />
-        </div>
+        </Box>
         <SendRoundedIcon sx={{ color: "#C5C5C5" }} onClick={onClick} />
       </Box>
     </Box>
