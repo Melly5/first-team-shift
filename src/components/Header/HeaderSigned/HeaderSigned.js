@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box } from "@mui/system";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
@@ -9,6 +9,13 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import Logo from "../../../assets/images/logo.png";
 
 export const HeaderSigned = () => {
+
+  const navigate = useNavigate();
+
+  const onClickSearch = () => {
+    navigate(`/friends`);
+  }
+
   return (
     <Box className="header signed">
     <Box className="signed-container">
@@ -40,7 +47,7 @@ export const HeaderSigned = () => {
             placeholder="Поиск..."
           />
           <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
-            <SearchIcon sx={{ color: "#C5C5C5" }} />
+            <SearchIcon sx={{ color: "#C5C5C5" }} onClick={ onClickSearch }/>
           </IconButton>
         </Paper>
         <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">

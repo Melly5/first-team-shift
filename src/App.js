@@ -6,6 +6,7 @@ import { RegistrationPage } from "./pages/Authentication/Registration/Registrati
 import { AuthorizationPage } from "./pages/Authentication/Authorization/Authorization";
 import { ChatPage } from "./pages/Chat/Chat";
 import { Friends } from "./pages/Friends/Friends";
+import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
 
 
 const queryClient = new QueryClient({
@@ -26,8 +27,9 @@ function App() {
           <Route path="/signup" element={<RegistrationPage />} />
           <Route path="/login" element={<AuthorizationPage />} />
           <Route path="/chat" element={<ChatPage />} />
-          <Route path="/" element={<ChatPage />} />
           <Route path="/friends" element={<Friends />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/" element={<ChatPage />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

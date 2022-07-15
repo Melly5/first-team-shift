@@ -28,11 +28,11 @@ export const SideBar = () => {
     }
   ]
 
-  const onClickFriends = () => {
-    navigate(`/friends`);
+  const onClickProfile = () => {
+    navigate(`/profile`);
   }
 
-  const onClickProfile = () => {
+  const onClickFriends = () => {
     navigate(`/friends`);
   }
 
@@ -52,22 +52,22 @@ export const SideBar = () => {
       </Box>
       <Box className="options">
         <Box className="options-item">
-          <div className="options-icon">
+          <Box className="options-icon">
             <PeopleOutlineIcon sx={{ color: "#C5C5C5" }} />
-          </div>
-          <div className="option" onClick={onClickFriends}>Друзья</div>
+          </Box>
+          <Box className="option" onClick={onClickFriends}>Друзья</Box>
         </Box>
         <Box className="options-item">
-          <div className="options-icon">
+          <Box className="options-icon">
             <SettingsOutlinedIcon sx={{ color: "#C5C5C5" }} />
-          </div>
-          <div className="option">Настройки</div>
+          </Box>
+          <Box className="option">Настройки</Box>
         </Box>
       </Box>
       <Box className="messages">
         <Box className="messages-logo">
           <KeyboardArrowDownOutlinedIcon sx={{ color: "#5A20FF" }} />
-          <span className="message-info">Сообщения</span>
+          <Box className="message-info">Сообщения</Box>
         </Box>
         {users.map((user) => 
         <Box className="messages-item">
