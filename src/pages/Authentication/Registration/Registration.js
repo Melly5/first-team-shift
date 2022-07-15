@@ -63,7 +63,7 @@ export const RegistrationPage = () => {
     validateOnBlur: validationSchema,
     onSubmit: (values) => {
       registration(values.email, values.nickname, values.password);
-      navigate(`/chat`);
+      navigate(`/profile`);
     },
     onChange: (values) => {
       console.log('@@', values);

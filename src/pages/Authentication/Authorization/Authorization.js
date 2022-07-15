@@ -60,7 +60,7 @@ export const AuthorizationPage = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      navigate(`/chat`);
+      navigate(`/profile`);
     },
   });
 
