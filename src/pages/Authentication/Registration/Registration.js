@@ -6,7 +6,7 @@ import { Box } from "@mui/system";
 import { useFormik } from "formik";
 import axios from "axios";
 import * as yup from "yup";
-import { registration } from "../../../utils/api/registration";
+import { RegistrationReq } from "../../../utils/api/RegistrationReq";
 import { Header } from "../../../components/Header/Header";
 import "./Registration.css";
 
@@ -62,7 +62,7 @@ export const RegistrationPage = () => {
     validationSchema: validationSchema,
     validateOnBlur: validationSchema,
     onSubmit: (values) => {
-      registration(values.email, values.nickname, values.password);
+      RegistrationReq(values.email, values.nickname, values.password);
       navigate(`/profile`);
     },
     onChange: (values) => {
